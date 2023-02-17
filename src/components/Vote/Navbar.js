@@ -1,10 +1,10 @@
 import React from "react";
 
-const Navbar = () => {
+const Navbar = ({ logout }) => {
   return (
     <div className="navbar">
       <h3>Hello, NAME</h3>
-      <button>Logout</button>
+      <button onClick={logout}>Logout</button>
     </div>
   );
 };
