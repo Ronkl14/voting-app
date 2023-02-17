@@ -3,11 +3,19 @@ import { candidates } from "../mock/candidates";
 import CandidateCard from "../components/Vote/CandidateCard";
 import Navbar from "../components/Vote/Navbar";
 import "../styles/Vote.css";
+import { PAGES } from "../constants";
 
-const Vote = () => {
+const [login] = PAGES;
+
+const Vote = ({ setPage }) => {
+  function logout() {
+    localStorage.removeItem("userData");
+    setPage(login);
+  }
+
   return (
     <div className="vote-page">
-      <Navbar />
+      <Navbar logout={logout} />
       <div className="candidates-container">
         {candidates.map((candidate) => (
           <CandidateCard

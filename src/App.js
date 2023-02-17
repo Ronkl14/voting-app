@@ -1,4 +1,3 @@
-import "./App.css";
 import { useState, useEffect } from "react";
 import { PAGES } from "./constants";
 import { Login, Vote, Admin } from "./pages";

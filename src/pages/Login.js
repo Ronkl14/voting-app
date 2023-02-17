@@ -5,9 +5,8 @@ import LoginButton from "../components/Login/LoginButton";
 import { useState } from "react";
 import { validateEmail } from "../utils/validateEmail";
 
-const Login = ({ setPage }) => {
+const Login = () => {
   const [values, setValues] = useState({
-    name: "",
     email: "",
     password: "",
   });
