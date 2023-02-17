@@ -1,9 +1,14 @@
-.candidates-container {
-  display: flex;
+.vote-page {
   width: 100vw;
   height: 100vh;
+}
+
+.candidates-container {
+  display: flex;
   justify-content: center;
   align-items: center;
+  background-color: lightgray;
+  height: 93%;
 }
 
 .candidate-card {
@@ -12,8 +17,18 @@
   border: 1px solid black;
   padding: 1rem;
   margin: 1rem;
+  background-color: lightgreen;
+  border-radius: 10px;
 }
 
 .candidate-card img {
   width: 100%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 7%;
+  padding: 0 3rem;
 }
