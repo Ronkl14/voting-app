@@ -1,7 +1,7 @@
 import React from "react";
 import { candidates } from "../mock/candidates";
 import CandidateCard from "../components/Vote/CandidateCard";
-import Navbar from "../components/Vote/Navbar";
+import Navbar from "../utils/Navbar";
 import "../styles/Vote.css";
 import { PAGES } from "../constants";
 import { userData } from "../App";
@@ -25,9 +25,12 @@ const Vote = ({ setPage }) => {
 
   const userName = userData.name;
 
+  let isAdmin;
+  userData.type === "admin" ? (isAdmin = true) : (isAdmin = false);
+
   return (
     <div className="vote-page">
-      <Navbar logout={logout} userName={userName} />
+      <Navbar logout={logout} userName={userName} adminClass={isAdmin} />
       <div className="candidates-container">
         {candidates.map((candidate) => (
           <CandidateCard
