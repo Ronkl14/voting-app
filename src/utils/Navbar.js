@@ -7,7 +7,9 @@ const Navbar = ({ logout, userName, adminClass, setPage }) => {
       <button className={adminClass ? "" : "hidden"} onClick={setPage}>
         Admin Panel
       </button>
-      <button onClick={logout}>Logout</button>
+      <button onClick={logout} className="btn logout">
+        Logout
+      </button>
     </div>
   );
 };

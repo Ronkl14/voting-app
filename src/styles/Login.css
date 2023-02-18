@@ -38,17 +38,6 @@ p {
   color: rgb(131, 130, 130);
 }
 
-.btn-login {
-  width: 100%;
-  padding: 0.6rem;
-  background-color: var(--btn-login-background);
-  border: none;
-  border-radius: 5px;
-  color: white;
-  font-size: 1.3rem;
-  margin-top: 1.5rem;
-}
-
 .logo-wrap {
   width: 60%;
   margin: 0 auto;
