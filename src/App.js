@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { PAGES } from "./constants";
 import { Login, Vote, Admin } from "./pages";
+import "./styles/App.css";
 
-const userData = localStorage.getItem("userData")
+export const userData = localStorage.getItem("userData")
   ? JSON.parse(localStorage.getItem("userData"))
   : null;
 

@@ -1,7 +1,11 @@
 import React from "react";
 
-const VoteButton = () => {
-  return <button>Vote</button>;
+const VoteButton = ({ onClick, className }) => {
+  return (
+    <button onClick={onClick} className={className}>
+      Vote
+    </button>
+  );
 };
 
 export default VoteButton;

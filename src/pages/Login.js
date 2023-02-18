@@ -18,6 +18,7 @@ const Login = () => {
   });
 
   const handleChange = (e) => {
+    setUserNotFoundError(false);
     const name = e.target.name;
     const value = e.target.value;
 
@@ -32,7 +33,6 @@ const Login = () => {
     const { email, password } = values;
 
     const userObj = users.filter((user) => user.email === email);
-    console.log(userObj);
 
     if (userObj.length === 0) {
       const message = "Email or password is incorrect";

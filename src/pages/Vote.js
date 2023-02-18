@@ -4,6 +4,7 @@ import CandidateCard from "../components/Vote/CandidateCard";
 import Navbar from "../components/Vote/Navbar";
 import "../styles/Vote.css";
 import { PAGES } from "../constants";
+import { userData } from "../App";
 
 const [login] = PAGES;
 
@@ -13,9 +14,11 @@ const Vote = ({ setPage }) => {
     setPage(login);
   }
 
+  const userName = userData.name;
+
   return (
     <div className="vote-page">
-      <Navbar logout={logout} />
+      <Navbar logout={logout} userName={userName} />
       <div className="candidates-container">
         {candidates.map((candidate) => (
           <CandidateCard

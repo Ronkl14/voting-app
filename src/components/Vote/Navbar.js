@@ -1,9 +1,9 @@
 import React from "react";
 
-const Navbar = ({ logout }) => {
+const Navbar = ({ logout, userName }) => {
   return (
     <div className="navbar">
-      <h3>Hello, NAME</h3>
+      <h3>Hello, {userName}</h3>
       <button onClick={logout}>Logout</button>
     </div>
   );

@@ -1,10 +1,10 @@
 import React from "react";
 
-const ConfirmVote = () => {
+const ConfirmVote = ({ className, cancel, confirm }) => {
   return (
-    <div>
-      <button>Confirm</button>
-      <button>Cancel</button>
+    <div className={className}>
+      <button onClick={confirm}>Confirm</button>
+      <button onClick={cancel}>Cancel</button>
     </div>
   );
 };
