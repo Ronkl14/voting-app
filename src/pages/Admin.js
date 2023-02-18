@@ -18,6 +18,9 @@ const Admin = ({ setPage }) => {
   return (
     <div className="admin-panel">
       <Navbar logout={logoutPage} userName={userName} />
+      <h2>
+        Total votes: {voters.length}/{users.length}
+      </h2>
       <div>
         {users.map((user) => (
           <UserRow
