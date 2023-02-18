@@ -3,7 +3,7 @@ import FormRow from "../components/Login/FormRow";
 import "../styles/Login.css";
 import LoginButton from "../components/Login/LoginButton";
 import { useState } from "react";
-import { validateEmail } from "../utils/validateEmail";
+import { users } from "../mock/users";
 
 const Login = () => {
   const [values, setValues] = useState({
@@ -12,24 +12,12 @@ const Login = () => {
   });
   const [isLoading, setIsLoading] = useState(false);
 
-  const [emailError, setEmailError] = useState({
-    isError: false,
-    message: "",
-  });
-  const [passwordError, setPasswordError] = useState({
+  const [userNotFoundError, setUserNotFoundError] = useState({
     isError: false,
     message: "",
   });
 
   const handleChange = (e) => {
-    setEmailError({
-      isError: false,
-      message: "",
-    });
-    setPasswordError({
-      isError: false,
-      message: "",
-    });
     const name = e.target.name;
     const value = e.target.value;
 
@@ -43,41 +31,32 @@ const Login = () => {
 
     const { email, password } = values;
 
-    if (!email || validateEmail(email)) {
-      const message = "Please enter a valid email";
-      setEmailError({
-        isError: true,
-        message,
-      });
-    } else {
-      setEmailError({
-        isError: false,
-        message: "",
-      });
-    }
+    const userObj = users.filter((user) => user.email === email);
+    console.log(userObj);
 
-    if (!password) {
-      const message = "Please enter a password";
-      setPasswordError({
-        isError: true,
-        message,
-      });
-    } else {
-      setPasswordError({
-        isError: false,
-        message: "",
-      });
-    }
-
-    if (!email || validateEmail(email) || !password) {
+    if (userObj.length === 0) {
+      const message = "Email or password is incorrect";
       setIsLoading(false);
-      return;
+      setUserNotFoundError({
+        isError: true,
+        message,
+      });
     } else {
-      localStorage.setItem("userData", JSON.stringify(values));
+      const passwordMatch = userObj[0].password === password;
+      if (!passwordMatch) {
+        setIsLoading(false);
+        const message = "Email or password is incorrect";
+        setUserNotFoundError({
+          isError: true,
+          message,
+        });
+      } else {
+        localStorage.setItem("userData", JSON.stringify(userObj[0]));
 
-      setTimeout(() => {
-        window.location.reload(false);
-      }, 2000);
+        setTimeout(() => {
+          window.location.reload(false);
+        }, 2000);
+      }
     }
   };
 
@@ -87,19 +66,18 @@ const Login = () => {
         <FormRow
           type="email"
           name="email"
-          error={emailError.isError}
           value={values.email}
           handleChange={handleChange}
         />
-        {emailError.isError && <small>{emailError.message}</small>}
         <FormRow
           type="password"
           name="password"
-          error={passwordError.isError}
           value={values.password}
           handleChange={handleChange}
         />
-        {passwordError.isError && <small>{passwordError.message}</small>}
+        {userNotFoundError.isError && (
+          <small>{userNotFoundError.message}</small>
+        )}
         <LoginButton isLoading={isLoading} />
       </form>
     </div>
