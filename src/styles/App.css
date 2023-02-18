@@ -33,3 +33,14 @@ ul {
 a {
   text-decoration: none;
 }
+
+.btn {
+  width: 100%;
+  padding: 0.6rem;
+  background-color: var(--btn-login-background);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+}

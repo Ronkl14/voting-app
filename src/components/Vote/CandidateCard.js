@@ -30,7 +30,7 @@ const Candidate = ({ name, img, party, voted }) => {
         <div className="candidate-vote-btns">
           <VoteButton
             onClick={voteClick}
-            className={`vote ${!hide ? "hidden" : ""}`}
+            className={`vote btn ${!hide ? "hidden" : ""}`}
           />
           <ConfirmVote
             className={`confirm-vote ${hide ? "hidden" : ""}`}

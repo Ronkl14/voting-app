@@ -69,13 +69,13 @@ const Login = () => {
         <p>Enter your credentials to access your account</p>
         <FormRow
           type="email"
-          name="E-mail"
+          name="email"
           value={values.email}
           handleChange={handleChange}
         />
         <FormRow
           type="password"
-          name="Password"
+          name="password"
           value={values.password}
           handleChange={handleChange}
         />
