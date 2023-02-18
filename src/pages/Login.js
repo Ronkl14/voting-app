@@ -4,6 +4,7 @@ import "../styles/Login.css";
 import LoginButton from "../components/Login/LoginButton";
 import { useState } from "react";
 import { users } from "../mock/users";
+import Logo from "../components/Login/Logo";
 
 const Login = () => {
   const [values, setValues] = useState({
@@ -63,20 +64,23 @@ const Login = () => {
   return (
     <div className="login-page">
       <form className="login-form" onSubmit={onSubmit}>
+        <Logo />
+        <h2>Welcome</h2>
+        <p>Enter your credentials to access your account</p>
         <FormRow
           type="email"
-          name="email"
+          name="E-mail"
           value={values.email}
           handleChange={handleChange}
         />
         <FormRow
           type="password"
-          name="password"
+          name="Password"
           value={values.password}
           handleChange={handleChange}
         />
         {userNotFoundError.isError && (
-          <small>{userNotFoundError.message}</small>
+          <p className="error-msg">{userNotFoundError.message}</p>
         )}
         <LoginButton isLoading={isLoading} />
       </form>

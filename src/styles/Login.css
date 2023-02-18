@@ -5,14 +5,16 @@
   height: 100vh;
   justify-content: center;
   align-items: center;
+  background-color: var(--background);
 }
 
 .login-form {
   width: 20vw;
-  height: 70vh;
-  border: 1px solid black;
   padding: 2rem;
   box-sizing: border-box;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 2px 8px 31px -6px rgba(0, 0, 0, 0.75);
 }
 
 .form-row {
@@ -20,4 +22,49 @@
   flex-direction: column;
   margin: 2rem 0;
   gap: 0.5rem;
+  font-size: 1.3rem;
+}
+
+h2,
+p {
+  text-align: center;
+}
+
+h2 {
+  color: rgb(68, 68, 68);
+}
+
+p {
+  color: rgb(131, 130, 130);
+}
+
+.btn-login {
+  width: 100%;
+  padding: 0.6rem;
+  background-color: var(--btn-login-background);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+}
+
+.logo-wrap {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.logo-wrap img {
+  width: 100%;
+}
+
+.error-msg {
+  font-size: 1.3rem;
+  color: red;
+}
+
+input {
+  border: 1px lightgray solid;
+  border-radius: 5px;
+  padding: 1rem;
 }

@@ -30,7 +30,12 @@ const Vote = ({ setPage }) => {
 
   return (
     <div className="vote-page">
-      <Navbar logout={logout} userName={userName} adminClass={isAdmin} />
+      <Navbar
+        logout={logout}
+        userName={userName}
+        adminClass={isAdmin}
+        setPage={() => setPage("admin")}
+      />
       <div className="candidates-container">
         {candidates.map((candidate) => (
           <CandidateCard

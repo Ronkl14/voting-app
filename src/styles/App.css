@@ -1,3 +1,8 @@
+:root {
+  --background: #f2f5ff;
+  --btn-login-background: #277ffe;
+}
+
 * {
   margin: 0;
   padding: 0;
