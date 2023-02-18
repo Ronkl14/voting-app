@@ -5,7 +5,6 @@ import Navbar from "../components/Vote/Navbar";
 import "../styles/Vote.css";
 import { PAGES } from "../constants";
 import { userData } from "../App";
-import { useState } from "react";
 
 const [login] = PAGES;
 
@@ -17,12 +16,7 @@ const Vote = ({ setPage }) => {
   const voters = JSON.parse(localStorage.getItem("voters"));
 
   let voted;
-  if (voters.includes(userData.id)) {
-    voted = true;
-  } else {
-    voted = false;
-  }
-  const [userVoted, setUserVoted] = useState(voted);
+  voters.includes(userData.id) ? (voted = true) : (voted = false);
 
   function logout() {
     localStorage.removeItem("userData");
@@ -40,7 +34,7 @@ const Vote = ({ setPage }) => {
             name={candidate.name}
             img={candidate.img}
             party={candidate.party}
-            voted={userVoted}
+            voted={voted}
           />
         ))}
       </div>
