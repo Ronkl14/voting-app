@@ -1,5 +1,32 @@
+.admin-panel {
+  height: 100vh;
+}
+
 .user-row {
   display: flex;
   gap: 2rem;
   margin: 0 2rem;
+  padding: 0.3rem;
+}
+
+.user-row p {
+  color: black;
+}
+
+.user-row .user-email {
+  flex-grow: 1;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 7%;
+  padding: 0 3rem;
+  background-color: #e6eeff;
+}
+
+.navbar .btn {
+  width: 8%;
+  margin: 0;
 }

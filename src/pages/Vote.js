@@ -12,9 +12,9 @@ if (!localStorage.getItem("voters")) {
   localStorage.setItem("voters", JSON.stringify([]));
 }
 
-const Vote = ({ setPage }) => {
-  const voters = JSON.parse(localStorage.getItem("voters"));
+export const voters = JSON.parse(localStorage.getItem("voters"));
 
+const Vote = ({ setPage }) => {
   let voted;
   voters.includes(userData.id) ? (voted = true) : (voted = false);
 
