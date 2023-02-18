@@ -14,10 +14,6 @@ const Admin = ({ setPage }) => {
     setPage(login);
   }
 
-  function didVote(id) {
-    return voters.includes(id) ? "true" : "false";
-  }
-
   const userName = userData.name;
   return (
     <div className="admin-panel">
