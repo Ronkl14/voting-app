@@ -1,3 +1,9 @@
+# React Voting App
+
+A voting app made for a weekend assignment in the AppleSeeds Full Stack Bootcamp
+
+[Site demo.](https://rkl14-voting-app-react.netlify.app/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
